@@ -9,7 +9,7 @@ namespace VampireRPG.ItemSystem {
 		[SerializeField] Sprite _icon;
 
 
-		ISQuality () {
+		public ISQuality () {
 			_icon = new Sprite();
 			_name = "Common";
 		}

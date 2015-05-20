@@ -6,6 +6,6 @@ namespace VampireRPG.ItemSystem {
 
 	public class ISQualityDatabase : ScriptableObject {
 //		[SerializeField]
-		List<ISQuality> db = new List<ISQuality>();
+		public List<ISQuality> database = new List<ISQuality>();
 	}
 }
