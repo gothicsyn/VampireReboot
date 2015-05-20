@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace VampireRPG.ItemSystem {
 
+	[System.Serializable]
 	public class ISQuality : IISQuality {
 		[SerializeField] string _name;
 		[SerializeField] Sprite _icon;

@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace VampireRPG.ItemSystem {
 
-	public class ISQualityDatabase : MonoBehaviour {
-
-		// Use this for initialization
-		void Start () {
-	
-		}
-	
-		// Update is called once per frame
-		void Update () {
-	
-		}
+	public class ISQualityDatabase : ScriptableObject {
+//		[SerializeField]
+		List<ISQuality> db = new List<ISQuality>();
 	}
 }
