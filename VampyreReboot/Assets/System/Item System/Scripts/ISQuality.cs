@@ -20,7 +20,7 @@ namespace VampireRPG.ItemSystem {
 
 		public ISQuality () {
 			_icon = new Sprite();
-			_name = "Common";
+			_name = "";
 		}
 
 		#region IISQuality implementation
