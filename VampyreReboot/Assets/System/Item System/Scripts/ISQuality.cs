@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// The Vampire Legends
+/// Copyright M A Games 2015
+/// 20.05.15
+/// Rev. 0.2
+/// 
+/// Sets the Quality of items that will available in game.
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
 namespace VampireRPG.ItemSystem {

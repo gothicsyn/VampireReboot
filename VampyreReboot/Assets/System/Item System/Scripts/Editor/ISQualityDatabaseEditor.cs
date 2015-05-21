@@ -1,4 +1,13 @@
-﻿using UnityEditor;
+﻿/// <summary>
+/// The Vampire Legends
+/// Copyright M A Games 2015
+/// 20.05.15
+/// Rev. 0.1
+/// 
+/// Visual side of the Quality database entry system.
+/// </summary>
+
+using UnityEditor;
 using UnityEngine;
 using System.Collections;
 
@@ -73,7 +82,8 @@ namespace VampireRPG.ItemSystem.Editor {
 				if(selectedItem == null)
 					return;
 
-				qualityDatabase.database.Add(selectedItem);
+				qualityDatabase.Add(selectedItem);
+				int x = qualityDatabase.Count;
 
 				selectedItem = new ISQuality();
 			}
