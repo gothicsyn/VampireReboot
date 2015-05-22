@@ -14,13 +14,14 @@ using System.Collections;
 namespace VampireRPG.ItemSystem.Editor {
 
 	public partial class ISQualityDatabaseEditor : EditorWindow {
+
 		ISQualityDatabase qualityDatabase;
 		ISQuality selectedItem;
 		Texture2D selectedTexture;
 		int selectedIndex = -1;					// Used to temporarily store an index for alteration in the database
 		Vector2 _scrollpos;						// This is a variable for the Scroll Position call for in ListView.cs part of the partial script.
 		
-		const int SPRITE_BUTTON_SIZE = 92;
+		const int SPRITE_BUTTON_SIZE = 64;
 
 		// Sets the root path for storage and creation of the database
 		const string DATABASE_FILE_NAME = @"VampireQualityDatabase.asset";
@@ -58,9 +59,19 @@ namespace VampireRPG.ItemSystem.Editor {
 
 		void OnGUI () {
 			ListView();
-			AddQualityToDatabase ();
+//			AddQualityToDatabase ();
+			GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true));
+			BottomBar();
+			GUILayout.EndHorizontal();
 		}
 
+		void BottomBar () {
+			// Will display count of current items in Database and an add button to add more to the database
+			GUILayout.Label("Current Items: " + qualityDatabase.Count);
+			if(GUILayout.Button("Add New")){
+				qualityDatabase.Add(new ISQuality());
+			}
+		}
 
 		void AddQualityToDatabase () {
 			// Name 

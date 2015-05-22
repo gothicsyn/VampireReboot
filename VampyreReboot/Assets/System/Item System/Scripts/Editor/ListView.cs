@@ -25,6 +25,8 @@ namespace VampireRPG.ItemSystem.Editor {
 
 		void DisplayQualities () {
 			for(int cnt = 0; cnt < qualityDatabase.Count; cnt++) {
+			// Styling Controls
+				GUILayout.BeginHorizontal("Box");
 			// Display sprite of stored field
 				if (selectedItem.Icon)
 					selectedTexture = qualityDatabase.Get(cnt).Icon.texture;
@@ -45,10 +47,23 @@ namespace VampireRPG.ItemSystem.Editor {
 						Repaint();
 					}
 				}
+			
+				GUILayout.BeginVertical();
 			// Display name of stored field
 				qualityDatabase.Get(cnt).Name = GUILayout.TextField(qualityDatabase.Get(cnt).Name);
+			
 			// Delete Button protion of Display
-				GUILayout.Button("x");
+				if(GUILayout.Button("x", GUILayout.Width(32), GUILayout.Height(32))){
+					if(EditorUtility.DisplayDialog("Delete Quality",
+					                               // Text in the Dialogue box
+					                               "Are you sure you wish to delete this item" + qualityDatabase.Get(cnt).Name, 
+					                               // Yes and No Button Names
+					                               "OK", "Cancel"))
+						qualityDatabase.Remove(cnt);
+				}
+
+				GUILayout.EndVertical();
+				GUILayout.EndHorizontal();
 			}
 		}
 	}
