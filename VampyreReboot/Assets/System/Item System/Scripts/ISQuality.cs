@@ -23,24 +23,21 @@ namespace VampireRPG.ItemSystem {
 			_name = "";
 		}
 
+		public ISQuality (string name, Sprite icon) {
+			_icon = icon;
+		_name = name;
+		}
+
 		#region IISQuality implementation
 
 		public string Name {
-			get {
-				return _name;
-			}
-			set {
-				_name = value;
-			}
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public Sprite Icon {
-			get {
-				return _icon;
-			}
-			set {
-				_icon = value;
-			}
+			get { return _icon; }
+			set { _icon = value; }
 		}
 
 		#endregion

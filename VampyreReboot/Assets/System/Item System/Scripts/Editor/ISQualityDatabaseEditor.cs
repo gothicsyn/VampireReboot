@@ -53,7 +53,7 @@ namespace VampireRPG.ItemSystem.Editor {
 				AssetDatabase.Refresh();
 			}
 
-			selectedItem = new ISQuality();
+//			selectedItem = new ISQuality();
 		}
 
 
@@ -73,38 +73,40 @@ namespace VampireRPG.ItemSystem.Editor {
 			}
 		}
 
-		void AddQualityToDatabase () {
+		#region IISQuality Uneeded Function
+//		void AddQualityToDatabase () {
 			// Name 
-			selectedItem.Name = EditorGUILayout.TextField("Name: ", selectedItem.Name);
+//			selectedItem.Name = EditorGUILayout.TextField("Name: ", selectedItem.Name);
 			// Sprite
-			if(selectedItem.Icon)
-				selectedTexture = selectedItem.Icon.texture;
-			else
-				selectedTexture = null; 
+//			if(selectedItem.Icon)
+//				selectedTexture = selectedItem.Icon.texture;
+//			else
+//				selectedTexture = null; 
 
-			if(GUILayout.Button(selectedTexture, GUILayout.Width(SPRITE_BUTTON_SIZE), GUILayout.Height(SPRITE_BUTTON_SIZE))) {
-				int controllerID = EditorGUIUtility.GetControlID(FocusType.Passive);
-				EditorGUIUtility.ShowObjectPicker<Sprite>(null, true, null, controllerID);
-			}
+//			if(GUILayout.Button(selectedTexture, GUILayout.Width(SPRITE_BUTTON_SIZE), GUILayout.Height(SPRITE_BUTTON_SIZE))) {
+//				int controllerID = EditorGUIUtility.GetControlID(FocusType.Passive);
+//				EditorGUIUtility.ShowObjectPicker<Sprite>(null, true, null, controllerID);
+//			}
 
-			string commandName = Event.current.commandName;
-			if(commandName == "ObjectSelectorUpdated") {
-				selectedItem.Icon = (Sprite)EditorGUIUtility.GetObjectPickerObject();
-				Repaint();
-			}
+//			string commandName = Event.current.commandName;
+//			if(commandName == "ObjectSelectorUpdated") {
+//				selectedItem.Icon = (Sprite)EditorGUIUtility.GetObjectPickerObject();
+//				Repaint();
+//			}
 
-			if(GUILayout.Button("Save")) {
-				if(selectedItem == null)
-					return;
+//			if(GUILayout.Button("Save")) {
+//				if(selectedItem == null)
+//					return;
 
-				if(selectedItem.Name == "")
-					return;
+//				if(selectedItem.Name == "")
+//					return;
 
-				qualityDatabase.Add(selectedItem);
-				int x = qualityDatabase.Count;
+//				qualityDatabase.Add(selectedItem);
+//				int x = qualityDatabase.Count;
 
-				selectedItem = new ISQuality();
-			}
-		}
+//				selectedItem = new ISQuality();
+//			}
+//		}
+		#endregion
 	}
 }
