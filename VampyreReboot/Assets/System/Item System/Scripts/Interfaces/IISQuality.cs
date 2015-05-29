@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+// IIS stands for Item Interfact System
 
 namespace VampireRPG.ItemSystem {
 
