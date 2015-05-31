@@ -14,6 +14,7 @@ using System.Collections;
 namespace VampireRPG.ItemSystem.Editor {
 
 	public partial class ISQualityDatabaseEditor {
+
 		// List all the stored quality in the database
 		void ListView () {
 			_scrollpos = EditorGUILayout.BeginScrollView(_scrollpos, GUILayout.ExpandHeight(true));
@@ -28,7 +29,7 @@ namespace VampireRPG.ItemSystem.Editor {
 			// Styling Controls
 				GUILayout.BeginHorizontal("Box");
 			// Display sprite of stored field
-				if (selectedItem.Icon)
+				if (qualityDatabase.Get(cnt).Icon)
 					selectedTexture = qualityDatabase.Get(cnt).Icon.texture;
 				else
 					selectedTexture = null;

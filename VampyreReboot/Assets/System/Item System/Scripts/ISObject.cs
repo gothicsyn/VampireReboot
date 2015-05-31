@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace VampireRPG.ItemSystem {
 
+	[System.Serializable]
 	public class ISObject : IISObject {
 		[SerializeField] string _name;
 		[SerializeField] int _value = 0;

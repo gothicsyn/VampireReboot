@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57f01380fa690d409a8adb6bbb9e013, type: 3}
   m_Name: VampireQualityDatabase
   m_EditorClassIdentifier: 
+  database: []
