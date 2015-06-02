@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 
 	public interface IISStackable {
 		int MaxStack { get; }					// Maximum Value of a Stack

@@ -9,9 +9,9 @@
 using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 
 	public interface IISGameObject {
-		GameObject Prefab { get; set; }
+		GameObject Prefab { get; }
 	}
 }

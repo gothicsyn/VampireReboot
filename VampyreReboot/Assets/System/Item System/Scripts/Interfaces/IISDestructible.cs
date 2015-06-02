@@ -9,7 +9,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 	public interface IISDestructible {
 
 			int Durability { get; }

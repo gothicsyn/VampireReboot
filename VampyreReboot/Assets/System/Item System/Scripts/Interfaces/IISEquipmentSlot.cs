@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 
-	public class IISEquipmentSlot {
+	public interface IISEquipmentSlot {
 		string Name { get; set; }
 		Sprite Icon { get; set; }
 	}

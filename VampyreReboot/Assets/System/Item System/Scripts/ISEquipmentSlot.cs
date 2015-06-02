@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 
 	public class ISEquipmentSlot : IISEquipmentSlot {
 
 		[SerializeField] string _name;
 		[SerializeField] Sprite _icon;
+
+		public ISEquipmentSlot() {
+			_name = "Name Me";
+			_icon = new Sprite();
+		}
 
 		public string Name {
 			get { return _name; }

@@ -9,10 +9,10 @@
 using UnityEngine;
 using System.Collections;
 
-namespace VampireRPG.ItemSystem.Editor {
+namespace VampireRPG.ItemSystem {
 
 	public interface IISEquip {
-		ISEquipmentSlot EquipmentSlot { set; }
+		ISEquipmentSlot EquipmentSlot { get; }
 		// equipSlot
 		bool Equip ();
 	}
