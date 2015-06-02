@@ -5,12 +5,14 @@
 /// Rev. 0.1
 /// 
 /// ISObject database to allow access, entry, removal and retrieval of data within the Object Management Database.
+/// This part of the Partial is designed to handle the base Unity Functions, making it easier to edit later.
 /// </summary>
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
 
 namespace VampireRPG.ItemSystem {
+
 	public partial class ISObjectEditor : EditorWindow {
 		[MenuItem("VampireRPG/Database/Object Editor %#i")]
 		
@@ -27,7 +29,15 @@ namespace VampireRPG.ItemSystem {
 
 		void OnGUI (){
 			TopTabBar();
+
+			GUILayout.BeginHorizontal();
+
+			ListView ();
+			ObjectDetails();
+
+			GUILayout.EndHorizontal();
+
+			BottomStatusBar();
 		}
 	}
-
 }
