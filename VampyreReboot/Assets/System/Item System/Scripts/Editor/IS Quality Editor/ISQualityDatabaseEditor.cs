@@ -27,7 +27,7 @@ namespace VampireRPG.ItemSystem.Editor {
 		const string DATABASE_PATH = @"Database";
 		const string DATABASE_FULL_PATH = @"Assets" + "/" + DATABASE_PATH + "/" + DATABASE_NAME;
 
-		[MenuItem("VampireRPG/Database/Quality Editor %#i")]
+		[MenuItem("VampireRPG/Database/Quality Editor %#w")]
 
 		// Initialises the Editor Window for creation of Item Quality details 
 		public static void Init() {
