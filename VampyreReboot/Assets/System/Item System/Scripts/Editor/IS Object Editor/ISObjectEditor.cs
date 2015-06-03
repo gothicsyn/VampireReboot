@@ -14,6 +14,14 @@ using System.Collections;
 namespace VampireRPG.ItemSystem {
 
 	public partial class ISObjectEditor : EditorWindow {
+		ISWeaponDatabase weaponDatabase;
+	
+		// Sets the root path for storage and creation of the database
+		const string DATABASE_NAME = @"VampireWeaponDatabase.asset";
+		const string DATABASE_PATH = @"Database";
+		const string DATABASE_FULL_PATH = @"Assets" + "/" + DATABASE_PATH + "/" + DATABASE_NAME;
+
+
 		[MenuItem("VampireRPG/Database/Object Editor %#i")]
 		
 		// Initialises the Editor Window for creation of Item Quality details 
@@ -25,6 +33,8 @@ namespace VampireRPG.ItemSystem {
 		}
 	
 		void OnEnable () {
+			if (weaponDatabase == null)
+				weaponDatabase = ISWeaponDatabase.GetDatabase<ISWeaponDatabase>(DATABASE_PATH, DATABASE_NAME);
 		}
 
 		void OnGUI (){

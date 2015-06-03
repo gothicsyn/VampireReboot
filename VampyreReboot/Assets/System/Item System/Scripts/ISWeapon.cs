@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 namespace VampireRPG.ItemSystem {
@@ -14,7 +15,6 @@ namespace VampireRPG.ItemSystem {
 		//Sets these paramters to new
 		public ISWeapon () {
 			_equipmentSlot = new ISEquipmentSlot();
-			_prefab = new GameObject();
 		}
 		                 
 		// These values are created once the item is created a single instance only.
@@ -95,5 +95,9 @@ namespace VampireRPG.ItemSystem {
 		}
 
 		#endregion
+
+		public void OnGUI() {
+			ISName = EditorGUILayout.TextField("Name: ", ISName);
+		}
 	}
 }
