@@ -17,6 +17,7 @@ $tf/
 *.userprefs
 *.pidb
 *.booproj
+*.shader
 
 # Unity3D generated meta files
 *.pidb.meta
