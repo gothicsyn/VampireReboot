@@ -8,5 +8,5 @@ It will be a combination of tutorials and Youtube stuff all thrown together and 
 Edits and revisions to the code-base can be found on the Commits page of the Github account.
 
 Details on updates to environments and the newest builds will be found on the website. 
-http://devils-inc.uhostfull.com/Resources/VampyreLegends/index.html
+https://elcarusmansion.wordpress.com/the-mansion/updates/
 
