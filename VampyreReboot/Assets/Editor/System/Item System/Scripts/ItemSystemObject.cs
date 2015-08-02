@@ -12,39 +12,42 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField]private int _value;
 		[SerializeField]private int _burden;
 		[SerializeField]private ItemSystemQuality _quality;
+
+		public ItemSystemObject (ItemSystemObject item) {
+			Clone(item);
+		}
+
+		public void Clone(ItemSystemObject item) {
+			_name = item.Name;
+			_icon = item.Icon;
+			_value = item.Value;
+			_burden = item.Burden;
+			_quality = item.Quality;
+		}
 	
-		public string Name 
-		{
-			get 
-			{
+		public string Name {
+			get {
 				return _name;
 			}
-			set 
-			{
+			set  {
 				_name = value;
 			}
 		}
 	
-		public int Value 
-		{
-			get 
-			{
+		public int Value  {
+			get {
 				return _value;
 			}
-			set 
-			{
+			set  {
 				_value = value; //if the names were the same like value = value, you can get around any problems by using this.value = value
 			}
 		}
 	
-		public Sprite Icon 
-		{
-			get 
-			{
+		public Sprite Icon  {
+			get {
 				return _icon;
 			}
-			set 
-			{
+			set {
 				_icon = value;
 			}
 		}

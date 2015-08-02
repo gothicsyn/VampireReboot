@@ -10,59 +10,53 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField] private int _minDamage;
 		[SerializeField] private int _durability;
 		[SerializeField] private int _maxDurability;
-		[SerializeField] private ItemSystemEquipmentSlot _equipmentSlot;
 		[SerializeField] private GameObject _prefab;
 		
 		public EquipmentSlot equipmentSlot;
 		
-		public ItemSystemWeapon () // Constructor
-		{
-			_equipmentSlot = new ItemSystemEquipmentSlot();
+		public ItemSystemWeapon () { 			// Constructor
 		}
 		
-		public ItemSystemWeapon (int durability, int maxDurability, ItemSystemEquipmentSlot equipmentSlot, GameObject prefab)
-		{
-			_durability = durability;
-			_maxDurability = maxDurability;
-			_equipmentSlot = equipmentSlot;
-			_prefab = prefab;
+		public ItemSystemWeapon (ItemSystemWeapon weapon) {
+			Clone(weapon);
+		}
+
+		public void Clone (ItemSystemWeapon weapon) {
+			base.Clone(weapon);
+
+			_durability = weapon.Durability;
+			_maxDurability = weapon.MaxDurability;
+			equipmentSlot = weapon.equipmentSlot;
+			_prefab = weapon.Prefab;
 		}
 		
 		//IItemSystemWeapon Implementation
-		public int minDamage 
-		{
-			get 
-			{
+		public int minDamage {
+			get {
 				return _minDamage;
 			}
-			set 
-			{
+			set {
 				_minDamage = value;
 			}
 		}
 		
-		public int Attack ()
-		{
+		public int Attack () {
 			throw new System.NotImplementedException ();
 		}
 
 		//IItemSystemDestructable
-		public void TakeDamage (int amount) //this is when the item takes damage
-		{
+		public void TakeDamage (int amount) { //this is when the item takes damage 
 			_durability -= amount;
 			
-			if(_durability < 0)
-			{
+			if(_durability < 0) {
 				_durability = 0;
 			}
 		}
 
-		public void Repair ()
-		{
+		public void Repair () {
 			_maxDurability--;
 			
-			if(_maxDurability > 0)
-			{
+			if(_maxDurability > 0) {
 				_durability = _maxDurability;
 			}
 		}
@@ -86,14 +80,6 @@ namespace BurgZergArcade.ItemSystem
 			get 
 			{
 				return _maxDurability;
-			}
-		}
-
-		public ItemSystemEquipmentSlot EquipmentSlot 
-		{
-			get 
-			{
-				return _equipmentSlot;
 			}
 		}
 
