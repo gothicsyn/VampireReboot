@@ -12,6 +12,9 @@ namespace BurgZergArcade.ItemSystem.Editor {
 		private int _selectedIndex = -1;
 		
 		private void ListView () {
+
+			if(state != DisplayState.NONE)
+				return;
 			_scrollPosition = GUILayout.BeginScrollView(_scrollPosition, "Box", GUILayout.ExpandHeight(true), GUILayout.Width(_listViewWidth)); //width in pixels
 
 			for(int cnt =0; cnt < database.Count; cnt++) {
