@@ -61,6 +61,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 			}
 			else
 			{
+				GUI.SetNextControlName ("SaveButton");
 				if(GUILayout.Button("Save"))
 				{
 					if(_selectedIndex == -1)
@@ -72,20 +73,28 @@ namespace BurgZergArcade.ItemSystem.Editor
 					tempWeapon = null;
 					_selectedIndex = -1;
 					state = DisplayState.NONE;
+					GUI.FocusControl ("SaveButton");
 				}
 
 				if(_selectedIndex != -1) {
 
-					if(GUILayout.Button("Delete")) {
+					if(GUILayout.Button("Delete")) 
+					{
+						if (EditorUtility.DisplayDialog ("Delete Weapon", 
+							    "Are you sure you want to delete " + database.Get (_selectedIndex).Name + " from the database?", 
+							    "Delete", 
+							    "Cancel")) 
+						{
+							database.Remove (_selectedIndex);
 
-							database.Remove(_selectedIndex);
-						
-						showNewWeaponDetails = false;
-						tempWeapon = null;
-						_selectedIndex = -1;
-						state = DisplayState.NONE;
+							showNewWeaponDetails = false;
+							tempWeapon = null;
+							_selectedIndex = -1;
+							state = DisplayState.NONE;
+							GUI.FocusControl ("SaveButton");
 						}
 					}
+				}
 
 				if(GUILayout.Button("Cancel"))
 				{
@@ -93,6 +102,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 					tempWeapon = null;
 					_selectedIndex = -1;
 					state = DisplayState.NONE;
+					GUI.FocusControl ("SaveButton");
+
 				}
 			}
 		}
