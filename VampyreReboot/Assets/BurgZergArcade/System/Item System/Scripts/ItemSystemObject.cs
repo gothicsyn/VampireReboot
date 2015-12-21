@@ -85,8 +85,9 @@ namespace BurgZergArcade.ItemSystem
 		{
 			GUILayout.BeginVertical();
 			_name = EditorGUILayout.TextField("Name", _name);
-			_value = System.Convert.ToInt32(EditorGUILayout.TextField("Value", _value.ToString()));
-			_burden = System.Convert.ToInt32(EditorGUILayout.TextField("Burden", _burden.ToString()));
+			_value = EditorGUILayout.IntField ("Value", _value);
+			_burden = EditorGUILayout.IntField ("Burden", _burden);
+
 			DisplayIcon();
 			DisplayQuality();
 			GUILayout.EndVertical();
@@ -121,7 +122,15 @@ namespace BurgZergArcade.ItemSystem
 		
 		public void DisplayQuality ()
 		{
-			qualitySelectedIndex = EditorGUILayout.Popup("Quality", qualitySelectedIndex, options);
+			int itemIndex = 0;
+
+				if(_quality != null)
+				itemIndex = qdb.GetIndex (_quality.Name);
+
+			if(itemIndex == -1)
+				itemIndex = 0;
+
+			qualitySelectedIndex = EditorGUILayout.Popup("Quality", itemIndex, options);
 			_quality = qdb.Get(SelectedQualityID);
 		}
 	}
