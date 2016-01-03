@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using System.Linq;
 using System.Collections;
@@ -9,7 +11,10 @@ namespace BurgZergArcade
 	public class ScriptableObjectDatabase<T> : ScriptableObject where T: class //pass in a class as a variable, T.
 	{
 		[SerializeField] protected List<T> database = new List<T>();
-		
+
+
+		#if UNITY_EDITOR
+
 		public void Add (T item)
 		{
 			database.Add(item);
@@ -33,6 +38,7 @@ namespace BurgZergArcade
 			database.RemoveAt(index);
 			EditorUtility.SetDirty(this);
 		}
+		#endif
 		
 		public int Count
 		{
@@ -43,7 +49,8 @@ namespace BurgZergArcade
 		{
 			return database.ElementAt(index);
 		}
-		
+
+		#if UNITY_EDITOR
 		public void Replace (int index, T item)
 		{
 			database[index] = item;
@@ -78,5 +85,6 @@ namespace BurgZergArcade
 			
 			return db;
 		}
+		#endif
 	}
 }

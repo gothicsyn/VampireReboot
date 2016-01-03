@@ -5,29 +5,47 @@ namespace BurgZergArcade.ItemSystem.Editor
 {
 	public partial class ItemSystemObjectEditor
 	{
+		enum TabState {
+			WEAPON,
+			ARMOR,
+			POTION,
+			ABOUT
+		}
+
+		TabState tabState;
+
 		private void TopTabBar ()
 		{
 			GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true));
 			WeaponTab();
 			ArmorTab();
-			GUILayout.Button("Potions");
+			PotionTab();
 			AboutTab();
 			GUILayout.EndHorizontal();
 		}
 		
 		private void WeaponTab ()
 		{
-			GUILayout.Button("Weapons");
+			if (GUILayout.Button ("Weapons"))
+				tabState = TabState.WEAPON;
 		}
-		
+
 		private void ArmorTab ()
 		{
-			GUILayout.Button("Armor");
+			if (GUILayout.Button ("Armor"))
+				tabState = TabState.ARMOR;
+		}
+
+		private void PotionTab ()
+		{
+			if (GUILayout.Button ("Potions"))
+				tabState = TabState.POTION;
 		}
 		
 		private void AboutTab ()
 		{
-			GUILayout.Button("About");
+			if (GUILayout.Button ("About"))
+				tabState = TabState.ABOUT;
 		}
 	}
 }

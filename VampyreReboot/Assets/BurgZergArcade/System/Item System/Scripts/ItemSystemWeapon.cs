@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
+#endif
 using System.Collections;
 using UnityEditor;
 
@@ -13,9 +15,8 @@ namespace BurgZergArcade.ItemSystem
 		[SerializeField] private GameObject _prefab;
 		
 		public EquipmentSlot equipmentSlot;
-		
-		public ItemSystemWeapon () { 			// Constructor
-		}
+
+		public ItemSystemWeapon () {}			// Constructor
 		
 		public ItemSystemWeapon (ItemSystemWeapon weapon) {
 			Clone(weapon);
@@ -91,9 +92,11 @@ namespace BurgZergArcade.ItemSystem
 				return _prefab;
 			}
 		}
-		
+
 		//this code will go into a new script later
-		
+
+
+		#if UNITY_EDITOR
 		public override void OnGUI ()// This OnGUI method overrides whatever OnGUI method we have in the base class
 		{
 			base.OnGUI();
@@ -115,5 +118,6 @@ namespace BurgZergArcade.ItemSystem
 		{
 			_prefab = EditorGUILayout.ObjectField("Prefab", _prefab, typeof(GameObject), false) as GameObject;
 		}
+		#endif
 	}
 }

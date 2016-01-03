@@ -29,15 +29,34 @@ namespace BurgZergArcade.ItemSystem.Editor
 			{
 				database = ItemSystemWeaponDatabase.GetDatabase<ItemSystemWeaponDatabase>(DATABASE_PATH, DATABASE_NAME);
 			}
+
+			tabState = TabState.WEAPON;
 		}
 		
 		private void OnGUI ()
 		{
 			TopTabBar();
-			
+
 			GUILayout.BeginHorizontal();
-			ListView();
-			ItemDetails();
+
+			switch (tabState) {
+			case TabState.WEAPON: 
+				ListView();
+				ItemDetails();
+				break;
+			case TabState.ARMOR: 
+				GUILayout.Label ("State: " + tabState);
+				break;
+			case TabState.POTION:
+				GUILayout.Label ("State: " + tabState);
+				break;
+			default:
+				GUILayout.Label ("Default State: " + tabState);
+				break;
+			}
+
+
+
 			GUILayout.EndHorizontal();
 			
 			BottomStatusBar();
