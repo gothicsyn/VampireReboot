@@ -1,8 +1,8 @@
 ﻿#if UNITY_EDITOR
-using UnityEngine;
+using UnityEditor;
 #endif
 using System.Collections;
-using UnityEditor;
+using UnityEngine;
 
 namespace BurgZergArcade.ItemSystem
 {

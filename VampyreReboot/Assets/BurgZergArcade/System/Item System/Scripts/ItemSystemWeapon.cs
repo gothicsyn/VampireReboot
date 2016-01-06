@@ -1,8 +1,8 @@
 ﻿#if UNITY_EDITOR
-using UnityEngine;
+using UnityEditor;
 #endif
 using System.Collections;
-using UnityEditor;
+using UnityEngine;
 
 namespace BurgZergArcade.ItemSystem
 {
@@ -16,7 +16,12 @@ namespace BurgZergArcade.ItemSystem
 		
 		public EquipmentSlot equipmentSlot;
 
-		public ItemSystemWeapon () {}			// Constructor
+		public ItemSystemWeapon () {
+			_minDamage = 0;
+			_durability = 1;
+			_maxDurability = 1;
+			equipmentSlot = EquipmentSlot.Torso;
+		}			// Constructor
 		
 		public ItemSystemWeapon (ItemSystemWeapon weapon) {
 			Clone(weapon);
@@ -87,8 +92,10 @@ namespace BurgZergArcade.ItemSystem
 
 		public GameObject Prefab 
 		{
-			get 
-			{
+			get {
+				if (!_prefab)
+					_prefab = new GameObject ();
+				
 				return _prefab;
 			}
 		}
@@ -119,5 +126,6 @@ namespace BurgZergArcade.ItemSystem
 			_prefab = EditorGUILayout.ObjectField("Prefab", _prefab, typeof(GameObject), false) as GameObject;
 		}
 		#endif
+
 	}
 }

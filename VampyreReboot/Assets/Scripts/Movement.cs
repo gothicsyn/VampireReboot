@@ -6,22 +6,22 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class Movement : MonoBehaviour {
-    Animator anim;
+	Animator anim;
 	bool isWalking = false;
 	const float WALK_SPEED = .5f;
 
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
+	void Awake()
+	{
+		anim = GetComponent<Animator>();
+	}
 
-    void Update ()
-    {
-        // Commands for Turning, Jumping, Moving and Walking
+	void Update ()
+	{
+		// Commands for Turning, Jumping, Moving and Walking
 		Walking();
 		Turning();
-        Move();
-    }
+		Move();
+	}
 
 	// Turning
 	void Turning()
@@ -39,8 +39,8 @@ public class Movement : MonoBehaviour {
 	}
 
 	// Allows For 360 Movement Alongside Mechanims Root Motion Controller
-    void Move()
-    {
+	void Move()
+	{
 		if(anim.GetBool("Walk"))
 		{
 			anim.SetFloat("MoveZ", Mathf.Clamp(Input.GetAxis("MoveZ"), -WALK_SPEED, WALK_SPEED));
@@ -51,5 +51,5 @@ public class Movement : MonoBehaviour {
 			anim.SetFloat("MoveZ", Input.GetAxis("MoveZ"));
 			anim.SetFloat("MoveX", Input.GetAxis("MoveX"));
 		}
-    }
+	}
 }
