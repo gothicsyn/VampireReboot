@@ -21,8 +21,6 @@ namespace BurgZergArcade.ItemSystem.Editor {
 				if(GUILayout.Button(database.Get(cnt).Name, "box", GUILayout.Width(_listViewButtonWidth), GUILayout.Height(_listViewButtonHeight))) {
 					_selectedIndex = cnt;
 					tempWeapon = new ItemSystemWeapon (database.Get(cnt));
-//					tempWeapon = new ItemSystemWeapon();
-//					tempWeapon.Clone(database.Get(cnt));
 					showNewWeaponDetails = true;
 					state = DisplayState.DETAILS;
 				}
