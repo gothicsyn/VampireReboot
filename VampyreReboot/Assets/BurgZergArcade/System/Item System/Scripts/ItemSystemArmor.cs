@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace BurgZergArcade.ItemSystem
 {
+	[System.Serializable]
 	public class ItemSystemArmor : ItemSystemObject, IItemSystemArmor, IItemSystemDestructable, IItemSystemGameObject {
 		[SerializeField] int _curArmor;
 		[SerializeField] int _maxArmor;
