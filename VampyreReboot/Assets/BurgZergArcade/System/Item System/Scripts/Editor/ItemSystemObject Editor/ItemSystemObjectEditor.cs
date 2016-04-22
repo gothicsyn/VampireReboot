@@ -6,8 +6,8 @@ namespace BurgZergArcade.ItemSystem.Editor
 {
 	public partial class ItemSystemObjectEditor : EditorWindow 
 	{
-		private ItemSystemWeaponDatabase database;
-		//private GUIContent titleContent;
+		ItemSystemWeaponDatabase database;
+		ItemSystemObjectCategory armorDatabase = new ItemSystemObjectCategory();
 
 		private const string DATABASE_NAME = @"bzaWeaponDatabase.asset";
 		private const string DATABASE_PATH = @"Database";
@@ -30,7 +30,9 @@ namespace BurgZergArcade.ItemSystem.Editor
 				database = ItemSystemWeaponDatabase.GetDatabase<ItemSystemWeaponDatabase>(DATABASE_PATH, DATABASE_NAME);
 			}
 
-			tabState = TabState.WEAPON;
+			armorDatabase.OnEnable();
+
+			tabState = TabState.ABOUT;
 		}
 		
 		private void OnGUI ()
@@ -45,7 +47,7 @@ namespace BurgZergArcade.ItemSystem.Editor
 				ItemDetails();
 				break;
 			case TabState.ARMOR: 
-				GUILayout.Label ("State: " + tabState);
+				armorDatabase.ListView (buttonSize, _listViewWidth);
 				break;
 			case TabState.POTION:
 				GUILayout.Label ("State: " + tabState);

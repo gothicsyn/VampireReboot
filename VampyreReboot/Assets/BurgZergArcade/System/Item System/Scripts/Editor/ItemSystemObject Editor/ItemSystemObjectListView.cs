@@ -6,10 +6,13 @@ namespace BurgZergArcade.ItemSystem.Editor {
 
 	public partial class ItemSystemObjectEditor {
 		private Vector2 _scrollPosition = Vector2.zero;
-		private int _listViewWidth = 200;
+		private int _listViewWidth = 210;
 		private int _listViewButtonWidth = 100;
 		private int _listViewButtonHeight = 25;
 		private int _selectedIndex = -1;
+
+		// New variables for the Armor System
+		Vector2 buttonSize = new Vector2 (190, 25);
 		
 		private void ListView () {
 

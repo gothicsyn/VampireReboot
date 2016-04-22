@@ -3,8 +3,5 @@ using System.Collections;
 
 namespace BurgZergArcade.ItemSystem
 {
-	public class ItemSystemWeaponDatabase : ScriptableObjectDatabase<ItemSystemWeapon>
-	{
-		
-	}
+	public class ItemSystemWeaponDatabase : ScriptableObjectDatabase<ItemSystemWeapon> { }
 }
