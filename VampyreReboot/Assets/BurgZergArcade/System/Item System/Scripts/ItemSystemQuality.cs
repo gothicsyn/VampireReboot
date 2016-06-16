@@ -20,6 +20,18 @@ namespace BurgZergArcade.ItemSystem
 			_name = name;
 			_icon = icon;
 		}
+
+//		#region IItemSystemDatabaseObject implementation
+
+//		public void Clone (IItemSystemDatabaseObject item) {
+//			_name = item.Name;
+//			_icon = item.Icon;
+//		}
+
+//		public void OnGUI() {
+//		}
+
+//		#endregion
 		
 		public string Name 
 		{

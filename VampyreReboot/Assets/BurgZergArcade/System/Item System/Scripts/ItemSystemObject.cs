@@ -29,6 +29,11 @@ namespace BurgZergArcade.ItemSystem
 			_burden = item.Burden;
 			_quality = item.Quality;
 		}
+
+//		public void Clone (IItemSystemDatabaseObject item) {
+//			_name = item.Name;
+//			_icon = item.Icon;
+//		}
 	
 		public string Name {
 			get {
